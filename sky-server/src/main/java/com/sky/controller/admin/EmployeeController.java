@@ -8,6 +8,7 @@ import com.sky.result.Result;
 import com.sky.service.EmployeeService;
 import com.sky.utils.JwtUtil;
 import com.sky.vo.EmployeeLoginVO;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/admin/employee")
 @Slf4j
-@RequiredArgsConstructor
+@RequiredArgsConstructor // 这个注解的作用：自动给final字段生成构造注入
 public class EmployeeController {
-
+    /*
+     这里使用的是构造注入，没有使用字段注入注解@Autowired
+     */
     private final EmployeeService employeeService;
 
     private final JwtProperties jwtProperties;
