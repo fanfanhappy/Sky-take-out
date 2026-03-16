@@ -91,7 +91,7 @@ public class CategoryController {
         return Result.success();
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public Result<List<Category>> list(Integer type)
     {
         List<Category> categoryList = categoryService.list(type);

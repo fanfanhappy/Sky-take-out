@@ -41,12 +41,12 @@ public class CategoryServiceImpl implements CategoryService {
 
         //设置默认状态
         category.setStatus(1);
-        //设置创建时间
+      /*  //设置创建时间
         category.setCreateTime(LocalDateTime.now());
         //设置修改时间
 
         //从ThreadLocal里面拿到创建人的id
-        category.setCreateUser(BaseContext.getCurrentId());
+        category.setCreateUser(BaseContext.getCurrentId());*/
 
         //更新数据库
         categoryMapper.save(category);
@@ -95,11 +95,11 @@ public class CategoryServiceImpl implements CategoryService {
         //对象拷贝
         BeanUtils.copyProperties(categoryDTO , category);
 
-        //修改时间
+       /* //修改时间
         category.setUpdateTime(LocalDateTime.now());
 
         //修改人
-        category.setUpdateUser(BaseContext.getCurrentId());
+        category.setUpdateUser(BaseContext.getCurrentId());*/
 
         categoryMapper.update(category);
 
@@ -116,10 +116,10 @@ public class CategoryServiceImpl implements CategoryService {
         category.setId(id);
         category.setStatus(status);
 
-        //设置更新时间
+       /* //设置更新时间
         category.setUpdateTime(LocalDateTime.now());
         //设置更新人
-        category.setUpdateUser(BaseContext.getCurrentId());
+        category.setUpdateUser(BaseContext.getCurrentId());*/
 
         categoryMapper.update(category);
     }
