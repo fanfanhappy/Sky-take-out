@@ -65,4 +65,16 @@ public class CategoryController {
         categoryService.deleteById(id);
         return Result.success();
     }
+
+    /**
+     * 修改分类
+     * @param categoryDTO
+     * @return
+     */
+    @PutMapping
+    public Result update(@RequestBody CategoryDTO categoryDTO)
+    {
+        categoryService.update(categoryDTO);
+        return Result.success();
+    }
 }
