@@ -103,7 +103,32 @@ public class CategoryServiceImpl implements CategoryService {
 
         categoryMapper.update(category);
 
+    }
 
+    /**
+     * 启用禁用分类
+     * @param id
+     * @param status
+     */
+    @Override
+    public void startOrStop(Long id, Integer status) {
+        Category category = new Category();
+        category.setId(id);
+        category.setStatus(status);
 
+        //设置更新时间
+        category.setUpdateTime(LocalDateTime.now());
+        //设置更新人
+        category.setUpdateUser(BaseContext.getCurrentId());
+
+        categoryMapper.update(category);
+    }
+
+    @Override
+    public List<Category> list(Integer type) {
+
+        List<Category> categories = categoryMapper.list(type);
+
+        return categories;
     }
 }
